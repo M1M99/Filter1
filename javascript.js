@@ -1,31 +1,213 @@
-//bezi yerlede' var idi ona gore \ istifade etmisemki hemin elementleri string kimi basa dusmesin eks halda text string olmurdu!
-//Taski 2 Cur(misal) ile Yazmisam! Ferqli Functionlar ile
-let text = 'New York, often called New York City[b] or NYC, is the most populous city in the United States, located at the southern tip of New York State on one of the world\'s largest natural harbors. The city comprises five boroughs, each coextensive with a respective county. New York is a global center of finance[11] and commerce, culture, technology,[12] entertainment and media, academics and scientific output,[13] the arts and fashion, and, as home to the headquarters of the United Nations, international diplomacy.[14][15][16][17] [18] With an estimated population in 2023 of 8,258,035[5] distributed over 300.46 square miles (778.2 km2),[4] the city is the most densely populated major city in the United States. New York City has more than double the population of Los Angeles, the nation\'s second-most populous city.[19] New York is the geographical and demographic center of both the Northeast megalopolis and the New York metropolitan area, the largest metropolitan area in the U.S. by both population and urban area. With more than 20.1 million people in its metropolitan statistical area[20] and 23.5 million in its combined statistical area as of 2020, New York City is one of the world\'s most populous megacities.[21] The city and its metropolitan area are the premier gateway for legal immigration to the United States. As many as 800 languages are spoken in New York City,[22] making it the most linguistically diverse city in the world. In 2021, the city was home to nearly 3.1 million residents born outside the U.S.,[19] the largest foreign-born population of any city in the world.[23] New York City traces its origins to Fort Amsterdam and a trading post founded on Manhattan Island by Dutch colonists around 1624. The settlement was named New Amsterdam in 1626 and was chartered as a city in 1653. The city came under English control in 1664 and was temporarily renamed New York after King Charles II granted the lands to his brother, the Duke of York,[24] before being permanently renamed New York in November 1674. New York City was the U.S. capital from 1785 until 1790.[25] The modern city was formed by the 1898 consolidation of its five boroughs: Manhattan, Brooklyn, Queens, The Bronx, and Staten Island.\
-Anchored by Wall Street in the Financial District, Manhattan, New York City has been called both the world\'s premier financial and fintech center[26][27] and the most economically powerful city in the world.[28] As of 2022, the New York metropolitan area is the largest metropolitan economy in the world, with a gross metropolitan product of over US$2.16 trillion.[9] If the New York metropolitan area were its own country, it would have the tenth-largest economy in the world. The city is home to the world\'s two largest stock exchanges by market capitalization of their listed companies: the New York Stock Exchange and Nasdaq. New York City is an established safe haven for global investors.[29] As of 2023, New York City is the most expensive city in the world for expatriates[30] and has by a wide margin the highest U.S. city residential rents;[31] and Fifth Avenue is the most expensive shopping street in the world.[32] New York City is home by a significant margin to the highest number of billionaires,[33] individuals of ultra-high net worth (greater than US$30 million),[34] and millionaires of any city in the world.[35]'
+let goods = [
+    {
+        product_name: "Kişi köynəyi",
+        product_description: "Mavi rəngdə, 100% pamuk",
+        product_price: 50,
+        store_name: "Moda Dünyası",
+        store_address: "Bakı şəhəri, Nizami kuçəsi 5",
+    },
+    {
+        product_name: "Qadın bluzası",
+        product_description: "Dəri detallı, qara rəngdə",
+        product_price: 60,
+        store_name: "Moda Dünyası",
+        store_address: "Bakı şəhəri, Nizami kuçəsi 5",
+    },
+    {
+        product_name: "Kişi pantolonu",
+        product_description: "Qəhvəyi rəng, kənar cebi",
+        product_price: 75,
+        store_name: "Moda Dünyası",
+        store_address: "Bakı şəhəri, Nizami kuçəsi 5",
+    },
+    {
+        product_name: "Qadın eteyi",
+        product_description: "Qırmızı rəng, mini",
+        product_price: 40,
+        store_name: "Moda Dünyası",
+        store_address: "Bakı şəhəri, Nizami kuçəsi 5",
+    },
+    {
+        product_name: "Kişi dəsmalı",
+        product_description: "Nəqşdar dizayn",
+        product_price: 20,
+        store_name: "Moda Dünyası",
+        store_address: "Bakı şəhəri, Nizami kuçəsi 5",
+    },
+    {
+        product_name: "Qadın çantası",
+        product_description: "Əlgötürən, dəri",
+        product_price: 90,
+        store_name: "Moda Dünyası",
+        store_address: "Bakı şəhəri, Nizami kuçəsi 5",
+    },
+    {
+        product_name: "Kişi botları",
+        product_description: "Qış üçün, suya davamlı",
+        product_price: 120,
+        store_name: "Moda Dünyası",
+        store_address: "Bakı şəhəri, Nizami kuçəsi 5",
+    },
+    {
+        product_name: "Qadın ayaqqabıları",
+        product_description: "Yüksək tapan, lacivərt",
+        product_price: 85,
+        store_name: "Moda Dünyası",
+        store_address: "Bakı şəhəri, Nizami kuçəsi 5",
+    },
+    {
+        product_name: "Kişi papağı",
+        product_description: "Qara rəngdə, dəri",
+        product_price: 45,
+        store_name: "Moda Dünyası",
+        store_address: "Bakı şəhəri, Nizami kuçəsi 5",
+    },
+    {
+        product_name: "Qadın şalvarı",
+        product_description: "Göy rəngdə, kaşmir",
+        product_price: 70,
+        store_name: "Zərif Moda",
+        store_address: "Bakı şəhəri, 28 May kuçəsi 12",
+    },
+    {
+        product_name: "Kişi palto",
+        product_description: "Süət dəri, qara rəngdə",
+        product_price: 250,
+        store_name: "Zərif Moda",
+        store_address: "Bakı şəhəri, 28 May kuçəsi 12",
+    },
+    {
+        product_name: "Qadın jaketi",
+        product_description: "Uzun, qaşqır",
+        product_price: 200,
+        store_name: "Zərif Moda",
+        store_address: "Bakı şəhəri, 28 May kuçəsi 12",
+    },
+    {
+        product_name: "Kişi kəməri",
+        product_description: "Dəri, metal tokalı",
+        product_price: 40,
+        store_name: "Zərif Moda",
+        store_address: "Bakı şəhəri, 28 May kuçəsi 12",
+    },
+    {
+        product_name: "Qadın badlonu",
+        product_description: "Retro stil, qızıl rəngdə",
+        product_price: 180,
+        store_name: "Zərif Moda",
+        store_address: "Bakı şəhəri, 28 May kuçəsi 12",
+    },
+    {
+        product_name: "Kişi şortu",
+        product_description: "Spor stil, elastik",
+        product_price: 60,
+        store_name: "Zərif Moda",
+        store_address: "Bakı şəhəri, 28 May kuçəsi 12",
+    },
+    {
+        product_name: "Qadın maykası",
+      product_description: "Boyalı nəqş, pamuklu",
+      product_price: 45,
+      store_name: "Zərif Moda",
+      store_address: "Bakı şəhəri, 28 May kuçəsi 12",
+    },
+    {
+        product_name: "Kişi saatı",
+        product_description: "Qara rəngdə, analog",
+        product_price: 150,
+        store_name: "Zərif Moda",
+        store_address: "Bakı şəhəri, 28 May kuçəsi 12",
+    },
+    {
+        product_name: "Qadın bəzək",
+        product_description: "Qızıl, komplekt",
+        product_price: 220,
+        store_name: "Əliyev Moda Mərkəzi",
+        store_address: "Bakı şəhəri, Azadlıq prospekti 89",
+    },
+    {
+        product_name: "Kişi atkısı",
+        product_description: "Xəzəl rəng, uzun",
+        product_price: 35,
+        store_name: "Əliyev Moda Mərkəzi",
+        store_address: "Bakı şəhəri, Azadlıq prospekti 89",
+    },
+    {
+        product_name: "Qadın bantı",
+        product_description: "Metal detallı, elastik",
+        product_price: 50,
+        store_name: "Əliyev Moda Mərkəzi",
+        store_address: "Bakı şəhəri, Azadlıq prospekti 89",
+    },
+    {
+        product_name: "Kişi kostyumu",
+        product_description: "İki parçalı, qara rəngdə",
+        product_price: 320,
+        store_name: "Əliyev Moda Mərkəzi",
+        store_address: "Bakı şəhəri, Azadlıq prospekti 89",
+    },
+    {
+        product_name: "Qadın kombinezonu",
+        product_description: "Yaz üçün, açıq rəng",
+        product_price: 150,
+        store_name: "Əliyev Moda Mərkəzi",
+        store_address: "Bakı şəhəri, Azadlıq prospekti 89",
+    },
+    {
+        product_name: "Kişi sviteri",
+        product_description: "Düz rəng, yüngül",
+        product_price: 70,
+        store_name: "Əliyev Moda Mərkəzi",
+        store_address: "Bakı şəhəri, Azadlıq prospekti 89",
+    },
+    {
+        product_name: "Qadın ziyafət geyimi",
+        product_description: "Düzənşən, yaz üçün",
+      product_price: 95,
+      store_name: "Əliyev Moda Mərkəzi",
+      store_address: "Bakı şəhəri, Azadlıq prospekti 89",
+    },
+    {
+        product_name: "Kişi sport formaları",
+        product_description: "Spandex, idman üçün",
+        product_price: 55,
+        store_name: "Əliyev Moda Mərkəzi",
+        store_address: "Bakı şəhəri, Azadlıq prospekti 89",
+    },
+    {
+        product_name: "Qadın bikini",
+        product_description: "Tropik nəqş, elastik",
+        product_price: 45,
+        store_name: "Əliyev Moda Mərkəzi",
+        store_address: "Bakı şəhəri, Azadlıq prospekti 89",
+    },
+    {
+        product_name: "Kişi çantası",
+        product_description: "Dizayner, əsas bölməsi",
+        product_price: 100,
+        store_name: "Əliyev Moda Mərkəzi",
+        store_address: "Bakı şəhəri, Azadlıq prospekti 89",
+    },
+    {
+        product_name: "Qadın ətri",
+        product_description: "Gül ətri, uzunömürlü",
+        product_price: 80,
+        store_name: "Əliyev Moda Mərkəzi",
+        store_address: "Bakı şəhəri, Azadlıq prospekti 89",
+    },
+    {
+        product_name: "Kişi şalı",
+        product_description: "Səliqəli, çoxrəngli",
+        product_price: 25,
+        store_name: "Əliyev Moda Mərkəzi",
+        store_address: "Bakı şəhəri, Azadlıq prospekti 89",
+    },
+]
 
-//example 1
-const countUsed = (str, word) => {
-    const wordsArray = str.split(word);
-    return wordsArray.length - 1;
-};
+// diapozonda goods massivini qiymete gore filter(filter metodu ile) edin
 
-const wordToCount1 = "New York";
-const count1 = countUsed(text, wordToCount1);
-console.log(`"${wordToCount1}" ${count1} times`);
-
-//example 2
-const countUsed2 = (str, word) => {
-    let count = 0;
-    const wordLength = word.length;
-
-    for (let i = 0; i <= str.length - wordLength; i++) {
-        if (str.slice(i, i + wordLength) === word) {
-            count++;
-        }
-    }
-    return count;
-};
-
-const wordToCount2 = "New York";
-const count2 = countUsed2(text, wordToCount2);
-console.log(`"${wordToCount2}" used ${count2} times`);
+function FilterPrice(minPriceRange, maxPriceRange){
+    console.log(goods.filter(a => a.product_price < maxPriceRange && a.product_price > minPriceRange))
+}
+FilterPrice(0,21)
+// console.log(goods)
