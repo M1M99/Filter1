@@ -204,10 +204,37 @@ let goods = [
     },
 ]
 
-// diapozonda goods massivini qiymete gore filter(filter metodu ile) edin
+// Mallari ayrica qiymete gore filter eden function ve ayrica ada gore filter eden function. Filter olunandan sonra browserdede(html sehifede) mallar filter olunmalidir
 
-function FilterPrice(minPriceRange, maxPriceRange){
-    console.log(goods.filter(a => a.product_price < maxPriceRange && a.product_price > minPriceRange))
+function ShowAllProducts(arr = []){
+    arr.forEach(element => {
+        let tag = document.createElement('li')
+        tag.innerHTML = `
+        <p1>Product : <p1> <br>
+        <p1>${element.product_name}<p1>
+        <p1>${element.product_description}<p1>
+        <p1>${element.product_price}<p1>
+        <p1>${element.store_address}<p1>
+        <p1>${element.store_name}<p1>
+        <br>
+        <br>
+        `
+        document.getElementById('list').appendChild(tag)
+    });
 }
-FilterPrice(0,21)
-// console.log(goods)
+
+function FilterByPrice(arr = [], beginValue, maxValue) {
+    let filtered = arr.filter((a) => a.product_price > beginValue && a.product_price < maxValue);
+    return filtered.sort((min, max) => min.product_price - max.product_price)
+}
+
+function FilterByName(arr = [],name) {
+    return goods.filter((search) => search.product_name
+        .toLowerCase()
+        .includes(name.toLowerCase())) // bu acar sozune gore butun mehsullari qaytarir include ni silsek 1 mehsula gore axtarar!
+}
+
+let array1 = FilterByPrice(goods,1,45)
+let array2 = FilterByName(goods,'Kişi şalı')
+ShowAllProducts(array1)
+ShowAllProducts(array2)
