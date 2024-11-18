@@ -210,13 +210,12 @@ function ShowAllProducts(arr = []){
     arr.forEach(element => {
         let tag = document.createElement('li')
         tag.innerHTML = `
-        <p1>Product : <p1> <br>
-        <p1>${element.product_name}<p1>
-        <p1>${element.product_description}<p1>
-        <p1>${element.product_price}<p1>
-        <p1>${element.store_address}<p1>
-        <p1>${element.store_name}<p1>
-        <br>
+        <p>Product : <p>
+        <p>${element.product_name}</p>
+        <p>${element.product_description}</p>
+        <p>${element.product_price}</p>
+        <p>${element.store_address}</p>
+        <p>${element.store_name}</p>
         <br>
         `
         document.getElementById('list').appendChild(tag)
